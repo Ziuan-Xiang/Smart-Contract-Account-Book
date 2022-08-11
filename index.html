@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Smart Contract Account Book</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="./web3.min.js"></script>
+    <script src="./abi-decoder.js"></script>
+  </head>
+  <body>
+  	<h1>A Smart Contract Account Book</h1>
+    <h2 style="font-style: italic;">ELEN 6883 Final Project</h2>
+    <div class="panel panel_right">
+      <h2>My Account</h2>
+      <select id="myaccount" class="account"></select>
+      <p>Total Owed: <span id="total_owed"></span></p>
+      <p>Last Activity: <span id="last_active"></span></p>
+      <p>Creditors: </p>
+      <h id="creditors" class="creditors"></h>
+    </div>
+    <div class="wallet_addresses_panel">
+        <h2>Wallet Addresses</h2>
+        <ol class="wallet_addresses"></ol>
+    </div>
+    <div class="main">
+      <h2>Add Transaction</h2>
+
+      <label for="creditor">
+      	Address of person you owe:
+      </label>
+      	<input type="text" id="creditor">
+      
+      <label for="amount">
+      	Amount you owe him/her:
+      </label>
+		  <input id="amount" type="text"> 
+      
+      <button id="addiou">Add Transaction</button>
+
+      <button id="myBtn">Show Debt Simplification</button>
+      <!-- popup -->
+      <div id="myModal" class="modal">
+        <!-- popup content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="history"> None
+          </p>
+        </div>
+      </div>
+
+      <div class="users">
+        <h2>Current Users</h2>
+        <p id="all_users"></p>
+        <pre id="log"></pre>
+      </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="./utils.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
